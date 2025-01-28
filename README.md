@@ -1,4 +1,4 @@
-<h1>Juego del amigo secreto</h1>
+<h1 align="center">Juego del amigo secreto</h1>
 <h3>¡Hola mi nombre es Mosel!</h3>
 <p>
   En esta aplicación tu podras realizar un juego del amigo secreto, para ello debes agregar los nombres de tus amigos y despues sortearlos para descubrir quien es tu amigo secreto.
