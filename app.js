@@ -1,6 +1,6 @@
 let amigo = document.getElementById('amigo');
-const agregarBtn = document.querySelector('.button-add');
-let nombres = [];
+let listaAmigos = document.getElementById('listaAmigos');
+let amigos = [];
 
 function validarNombreAmigo(amigo){
     let nombre = amigo.value;
@@ -19,15 +19,28 @@ function alertaNombreInvalido(){
 function agregarAmigo(){
     let nombre = amigo.value;
     if(validarNombreAmigo(amigo) == true){
-        nombres.push(nombre);
-        limpiarInput();
+        amigos.push(nombre);
     }else{
         alertaNombreInvalido();
     }
-    console.log(nombres);
+    limpiarInput();
+    limpiarLista();
+    agregaAmigosLista();
+    console.log(amigos);
 }
 
 function limpiarInput(){
     return amigo.value = '';
 }
 
+function limpiarLista(){
+    return listaAmigos.innerHTML = '';
+}
+
+function agregaAmigosLista(){
+    for(let i = 0; i < amigos.length; i++){
+        let li = document.createElement('li');
+        li.innerHTML = amigos[i];
+        listaAmigos.appendChild(li);
+    }
+}
