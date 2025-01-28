@@ -1,5 +1,6 @@
 let amigo = document.getElementById('amigo');
 let listaAmigos = document.getElementById('listaAmigos');
+let resultado = document.getElementById('resultado');
 let amigos = [];
 
 function validarNombreAmigo(amigo){
@@ -42,5 +43,23 @@ function agregaAmigosLista(){
         let li = document.createElement('li');
         li.innerHTML = amigos[i];
         listaAmigos.appendChild(li);
+    }
+}
+
+function validarListaAmigos(){
+    if(amigos.length > 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+function sortearAmigo(){
+    let indice = Math.floor(Math.random() * amigos.length);
+    if(validarListaAmigos() == true){
+        return resultado.innerHTML = amigos[indice];
+    }else{
+        return alert('No hay amigos');
     }
 }
